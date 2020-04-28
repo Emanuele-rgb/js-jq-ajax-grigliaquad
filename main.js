@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-  var boxes = $('.box')
+  var boxes = $('.box');
 
 
 boxes.click(function(){
@@ -16,26 +16,20 @@ $.ajax({
     console.log(res)
     var number = res.response;
 
+  if (number <= 5){
 
-      self.text(number);
-
-$('.box').on('click', function(){
-
-
-
-  if (number >= 5){
-
-  $(this).addClass('yellow')
-  $(this).removeClass('green')
+  self.addClass('yellow')
+  self.removeClass('green')
   }
 
-  else if (number < 5) {
-    $(this).addClass('green')
-    $(this).removeClass('yellow')
+  else {
+
+    self.addClass('green')
+    self.removeClass('yellow')
   }
-})
 
 
+self.text(number);
 
   },
   error: function (){
